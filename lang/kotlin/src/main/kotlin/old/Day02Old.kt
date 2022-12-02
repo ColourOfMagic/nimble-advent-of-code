@@ -1,6 +1,7 @@
-import utils.readFileAsString
+package old
 
-// TODO: create abstract class and common test
+import readFileAsString
+
 fun main() {
 
     second()
