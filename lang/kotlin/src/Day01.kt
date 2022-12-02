@@ -1,5 +1,6 @@
-import utils.readInputAsString
+import utils.readFileAsString
 
+// TODO: create abstract class and common test
 fun main() {
 
     second()
@@ -8,7 +9,7 @@ fun main() {
 }
 
 private fun fistTest() {
-    val result = readInputAsString("Day01-test")
+    val result = readFileAsString("Day01-test")
         .split("\n\n")
         .map { part -> part.lines().sumOf { it.toInt() } }
         .max()
@@ -17,7 +18,7 @@ private fun fistTest() {
 }
 
 private fun first() {
-    val result = readInputAsString("Day01")
+    val result = readFileAsString("Day01")
         .split("\n\n")
         .map { part -> part.lines().sumOf { it.toInt() } }
         .max()
@@ -26,7 +27,7 @@ private fun first() {
 }
 
 private fun secondTest() {
-    val result = readInputAsString("Day01-test")
+    val result = readFileAsString("Day01-test")
         .split("\n\n")
         .map { part -> part.lines().sumOf { it.toInt() } }
         .sortedDescending()
@@ -37,7 +38,7 @@ private fun secondTest() {
 }
 
 private fun second() {
-    val result = readInputAsString("Day01")
+    val result = readFileAsString("Day01")
         .split("\n\n")
         .map { part -> part.lines().sumOf { it.toInt() } }
         .sortedDescending()
