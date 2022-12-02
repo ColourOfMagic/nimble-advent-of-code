@@ -4,12 +4,11 @@ abstract class Day(
     val secondTestAnswer: Long? = null
 ) {
 
-    private val inputString: String
+    val inputString: String
         get() = readFileAsString(fileName)
 
-    fun runFirstPart() {
-        fistPart(inputString)
-    }
+    val inputTestString: String
+        get() = readFileAsString("$fileName-test")
 
     abstract fun fistPart(input: String): Long
     abstract fun secondPart(input: String): Long

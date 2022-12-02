@@ -41,6 +41,7 @@ private fun convert2(first: String, second: String): String =
             "B" -> "A"
             else -> throw NotImplementedError()
         }
+
         "Y" -> first
         "Z" -> when (first) {
             "A" -> "B"
@@ -58,6 +59,7 @@ private enum class Shape(val num: Int) {
     C(3);
 
     companion object {
+
         fun calculateWin(first: Shape, second: Shape) = when {
             first == A && second == B -> 6
             first == B && second == C -> 6
@@ -68,6 +70,4 @@ private enum class Shape(val num: Int) {
     }
 }
 
-private fun String.toEnum(): Shape {
-    return Shape.valueOf(this)
-}
+private fun String.toEnum(): Shape = Shape.valueOf(this)
