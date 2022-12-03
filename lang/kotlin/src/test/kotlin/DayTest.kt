@@ -13,7 +13,7 @@ abstract class DayTest<T : Day>(private val day: T) {
     private val inputString by lazy { readFileAsStringFromTest(day.fileName) }
 
     @TestFactory
-    fun `Day all tests`(): Collection<DynamicTest> =
+    fun tests(): Collection<DynamicTest> =
         listOf(
             if (day.firstTestAnswer != null) firstTest() else nullDynamicTest("1. firstTestAnswer"),
             firstRealCalculate(),
