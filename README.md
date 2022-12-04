@@ -1,6 +1,6 @@
 # Advent of Code `nimble`
 
-*This is the first code that I wrote to solve the task and I don't think it's the fastest or optimal solution, but it can be!*
+*This is the first code that I wrote to solve the puzzle and I don't think it's the fastest or optimal solution, but it can be!*
 
 Just implement `Day` and `DayTest` to pass the task.
 The junit test, when started, runs all variants sequentially:
