@@ -13,4 +13,4 @@ jobs:
       - name: Run build with Gradle Wrapper
         run: |
           cd lang/kotlin
-          gradle build
+          gradle test
