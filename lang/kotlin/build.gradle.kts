@@ -6,7 +6,9 @@ plugins {
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.9.1")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.14.0")
 }
 
 repositories {
