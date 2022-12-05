@@ -17,7 +17,7 @@ updateReadme(createProgressBar(successTestsCount) + '\n\n### Results 📝 \n\n' 
 
 function createProgressBar(count) {
     let snowflakes = 25 - count;
-    return '## Progress [' + '🎄'.repeat(count) + '❄️'.repeat(snowflakes) + `] (${count}/25)`;
+    return '## [' + '🎄'.repeat(count) + '❄️'.repeat(snowflakes) + ']';
 }
 
 function createTable(reportJson) {
