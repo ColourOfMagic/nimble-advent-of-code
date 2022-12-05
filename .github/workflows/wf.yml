@@ -1,9 +1,11 @@
 name: Advent of Code Actions
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  build-gradle-project:
+  build-tests-kotlin-part:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project sources
@@ -22,5 +24,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change (readme)!
-          branch: add-readme-reports
+          branch: main
           file_pattern: 'README.md'
