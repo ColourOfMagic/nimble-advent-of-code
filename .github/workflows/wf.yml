@@ -1,4 +1,4 @@
-name: TCC-web-app GitHub Actions v1
+name: Advent of Code Actions
 on:
   push:
 

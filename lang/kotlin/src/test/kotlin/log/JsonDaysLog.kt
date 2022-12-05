@@ -38,6 +38,6 @@ class JsonDaysLog : TestExecutionListener {
 
     private val TestExecutionResult.throwableString
         get() = (if (throwable.isPresent) throwable.get().toString() else null)
-}
 
-data class Test(val name: String, val status: String, val error: String?)
+    data class Test(val name: String, val status: String, val error: String?)
+}
