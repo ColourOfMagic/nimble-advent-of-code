@@ -1,8 +1,6 @@
 const fs = require('fs');
 
-const startUpdateLine = '// TODO: create action for automatic update Markdown table with tests from junit.'
-
-console.log("Staart !")
+const startUpdateLine = '`🔻 Аuto stats (via custom github action)🔻`'
 
 const report = fs.readFileSync('lang/kotlin/build/reports/report.json').toString()
 
@@ -10,11 +8,16 @@ const reportJson = JSON.parse(report)
 
 console.log(createTable(reportJson))
 
-updateReadme(createProgressBar(5) + '\n\n' + createTable(reportJson))
+const successTestsCount = Object.keys(reportJson).map(rowName => {
+    let row = reportJson[rowName]
+    return row.every(el => el.status === 'SUCCESSFUL')
+}).filter(el => el).length
+
+updateReadme(createProgressBar(successTestsCount) + '\n\n### Results 📝 \n\n' + createTable(reportJson))
 
 function createProgressBar(count) {
     let snowflakes = 25 - count;
-    return '## [' + '🎄'.repeat(count) + '❄️'.repeat(snowflakes) + ']';
+    return '## Progress [' + '🎄'.repeat(count) + '❄️'.repeat(snowflakes) + `] (${count}/25)`;
 }
 
 function createTable(reportJson) {

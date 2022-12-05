@@ -12,7 +12,7 @@ The junit test, when started, runs all variants sequentially:
 Or start manually via `main()`
 
 ---
-// TODO: create action for automatic update Markdown table with tests from junit.
+`🔻 Аuto stats (via custom github action)🔻`
 
 ## [🎄🎄🎄🎄🎄❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️]
 

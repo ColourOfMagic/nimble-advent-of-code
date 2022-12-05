@@ -16,8 +16,8 @@ jobs:
           gradle test
       - name: Setup Node.js
         uses: actions/setup-node@v3
-      - name: Run reports script
-        run: node report/gradleReport.js
+      - name: Run readme update script
+        run: node report/kotlinPartReport.js
       - name: Auto commit readme
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
