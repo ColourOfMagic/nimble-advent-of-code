@@ -1,7 +1,7 @@
 abstract class Day(
     val fileName: String,
-    val firstTestAnswer: Long? = null,
-    val secondTestAnswer: Long? = null
+    val firstTestAnswer: Any? = null,
+    val secondTestAnswer: Any? = null
 ) {
 
     val inputString: String
@@ -10,6 +10,6 @@ abstract class Day(
     val inputTestString: String
         get() = readFileAsString("$fileName-test")
 
-    abstract fun fistPart(input: String): Long
-    abstract fun secondPart(input: String): Long
+    abstract fun fistPart(input: String): Any
+    abstract fun secondPart(input: String): Any
 }

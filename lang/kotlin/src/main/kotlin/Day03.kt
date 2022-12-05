@@ -4,7 +4,7 @@ class Day03 : Day(
     secondTestAnswer = 70
 ) {
 
-    override fun fistPart(input: String): Long =
+    override fun fistPart(input: String) =
         input
             .lines()
             .map {
@@ -16,9 +16,8 @@ class Day03 : Day(
                 first.toSet().first { sSet.contains(it) }
             }
             .sumOf { it.toAdventNumber() }
-            .toLong()
 
-    override fun secondPart(input: String): Long =
+    override fun secondPart(input: String) =
         input
             .lines()
             .chunked(3)
@@ -26,7 +25,6 @@ class Day03 : Day(
                 part[0].first { part[1].contains(it) && part[2].contains(it) }
             }
             .sumOf { it.toAdventNumber() }
-            .toLong()
 
     private fun Char.toAdventNumber() = if (isLowerCase()) code - 96 else lowercaseChar().code - 96 + 26
 }
