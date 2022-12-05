@@ -1,0 +1,28 @@
+name: Advent of Code Actions
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-tests-kotlin-part:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project sources
+        uses: actions/checkout@v2
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Run build with Gradle Wrapper
+        run: |
+          cd lang/kotlin
+          gradle test
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - name: Run readme update script
+        run: node report/kotlinPartReport.js
+      - name: Auto commit readme
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change (readme)!
+          branch: main
+          file_pattern: 'README.md'

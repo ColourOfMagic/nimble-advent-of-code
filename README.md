@@ -12,4 +12,10 @@ The junit test, when started, runs all variants sequentially:
 Or start manually via `main()`
 
 ---
-// TODO: create action for automatic update Markdown table with tests from junit.
+`🔻 Аuto stats (via custom github action)🔻`
+
+## [🎄🎄🎄🎄🎄❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️]
+
+### Results 📝 
+
+<table><tr><td>Test</td><td>Result</td><td>Info</td></tr><tr><td>Day01Test</td><td>✅✅✅✅</td><td><details><summary>Info</summary>1. First task -> Test SUCCESSFUL  <br>2. First task -> Answer SUCCESSFUL  <br>3. Second task -> Test SUCCESSFUL  <br>4. Second task -> Answer SUCCESSFUL  </details></td></tr><tr><td>Day02Test</td><td>✅✅✅✅</td><td><details><summary>Info</summary>1. First task -> Test SUCCESSFUL  <br>2. First task -> Answer SUCCESSFUL  <br>3. Second task -> Test SUCCESSFUL  <br>4. Second task -> Answer SUCCESSFUL  </details></td></tr><tr><td>Day03Test</td><td>✅✅✅✅</td><td><details><summary>Info</summary>1. First task -> Test SUCCESSFUL  <br>2. First task -> Answer SUCCESSFUL  <br>3. Second task -> Test SUCCESSFUL  <br>4. Second task -> Answer SUCCESSFUL  </details></td></tr><tr><td>Day04Test</td><td>✅✅✅✅</td><td><details><summary>Info</summary>1. First task -> Test SUCCESSFUL  <br>2. First task -> Answer SUCCESSFUL  <br>3. Second task -> Test SUCCESSFUL  <br>4. Second task -> Answer SUCCESSFUL  </details></td></tr><tr><td>Day05Test</td><td>✅✅✅✅</td><td><details><summary>Info</summary>1. First task -> Test SUCCESSFUL  <br>2. First task -> Answer SUCCESSFUL  <br>3. Second task -> Test SUCCESSFUL  <br>4. Second task -> Answer SUCCESSFUL  </details></td></tr></table>
