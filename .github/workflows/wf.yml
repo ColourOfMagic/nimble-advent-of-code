@@ -14,3 +14,7 @@ jobs:
         run: |
           cd lang/kotlin
           gradle test
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - name: Run reports script
+        run: node report/gradleReport.js

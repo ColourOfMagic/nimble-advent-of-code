@@ -12,39 +12,32 @@ import kotlin.io.path.Path
 class JsonDaysLog : TestExecutionListener {
 
     private val objectMapper = ObjectMapper()
-    private val tests = mutableListOf<TestClass>().apply {
-        add(TestClass("TestClass", tests = mutableListOf(Test("1. test", status = "failed"))))
-    }
+    private val modernTests = mutableMapOf<String, MutableList<Test>>()
     private val buildDirPath = System.getProperty("user.dir") + File.separator + "build" + File.separator
 
     override fun testPlanExecutionFinished(testPlan: TestPlan?) {
         val reportPath = buildDirPath + "reports" + File.separator + "report.json"
-        tests.sortBy { it.name }
-        objectMapper.writeValue(Path(reportPath).toFile(), tests)
-//        println(testPlan)
+        objectMapper.writeValue(Path(reportPath).toFile(), modernTests.toSortedMap())
+        println("Json report done!")
     }
 
-    override fun executionFinished(testIdentifier: TestIdentifier, testExecutionResult: TestExecutionResult) {
-        super.executionFinished(testIdentifier, testExecutionResult)
+    override fun executionFinished(testIdentifier: TestIdentifier, result: TestExecutionResult) {
         if (testIdentifier.isTest)
-            addToTests(
-                (testIdentifier.source?.get() as MethodSource).className,
-                Test(testIdentifier.displayName!!, testExecutionResult.status.toString())
+            addToTestsModern(
+                testClassName = testIdentifier.className,
+                test = Test(testIdentifier.displayName, result.status.name, result.throwableString)
             )
-        println(testIdentifier)
     }
 
-    private fun addToTests(testClassName: String, test: Test) {
-        val testClass = tests.find { it.name == testClassName }
-        if (testClass != null) {
-            testClass.tests.add(test)
-        } else {
-            tests.add(TestClass(name = testClassName, tests = mutableListOf(test)))
-        }
-
+    private fun addToTestsModern(testClassName: String, test: Test) {
+        modernTests.getOrPut(testClassName, ::mutableListOf).add(test)
     }
+
+    private val TestIdentifier.className
+        get() = (source?.get() as MethodSource).className.substringAfterLast('.')
+
+    private val TestExecutionResult.throwableString
+        get() = (if (throwable.isPresent) throwable.get().toString() else null)
 }
 
-data class Test(val name: String, val status: String)
-
-data class TestClass(val name: String, val tests: MutableList<Test>)
+data class Test(val name: String, val status: String, val error: String?)
