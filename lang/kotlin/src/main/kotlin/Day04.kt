@@ -4,7 +4,7 @@ class Day04 : Day(
     secondTestAnswer = 4
 ) {
 
-    override fun fistPart(input: String): Long =
+    override fun fistPart(input: String) =
         input
             .lines()
             .map {
@@ -12,9 +12,8 @@ class Day04 : Day(
             }.count { (first, second) ->
                 first.all(second) || second.all(first)
             }
-            .toLong()
 
-    override fun secondPart(input: String): Long =
+    override fun secondPart(input: String) =
         input
             .lines()
             .map {
@@ -23,7 +22,6 @@ class Day04 : Day(
             .count { (first, second) ->
                 first.any(second) || second.any(first)
             }
-            .toLong()
 
     private fun IntRange.all(other: IntRange) = this.all { other.contains(it) }
 

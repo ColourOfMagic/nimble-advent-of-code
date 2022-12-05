@@ -4,19 +4,17 @@ class Day01 : Day(
     secondTestAnswer = 45000
 ) {
 
-    override fun fistPart(input: String): Long =
+    override fun fistPart(input: String) =
         input
             .split("\n\n")
             .map { part -> part.lines().sumOf { it.toInt() } }
             .max()
-            .toLong()
 
-    override fun secondPart(input: String): Long =
+    override fun secondPart(input: String) =
         input
             .split("\n\n")
             .map { part -> part.lines().sumOf { it.toInt() } }
             .sortedDescending()
             .slice(0..2)
             .sum()
-            .toLong()
 }

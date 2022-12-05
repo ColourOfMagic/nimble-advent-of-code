@@ -4,7 +4,7 @@ class Day02 : Day(
     secondTestAnswer = 12
 ) {
 
-    override fun fistPart(input: String): Long =
+    override fun fistPart(input: String) =
         input
             .split("\n")
             .map {
@@ -12,9 +12,8 @@ class Day02 : Day(
                 Pair(res.first().toEnum(), res.last().convert().toEnum())
             }
             .sumOf { (first, second) -> Shape.calculateWin(first, second) }
-            .toLong()
 
-    override fun secondPart(input: String): Long =
+    override fun secondPart(input: String) =
         input
             .split("\n")
             .map {
@@ -22,7 +21,6 @@ class Day02 : Day(
                 Pair(res.first().toEnum(), convert2(res.first(), res.last()).toEnum())
             }
             .sumOf { (first, second) -> Shape.calculateWin(first, second) }
-            .toLong()
 }
 
 private fun String.convert(): String =
