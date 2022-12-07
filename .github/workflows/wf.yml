@@ -23,6 +23,6 @@ jobs:
       - name: Auto commit readme
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Automated Change (readme)!
+          commit_message: Automated Change (readme) ⚙️
           branch: main
           file_pattern: 'README.md'
