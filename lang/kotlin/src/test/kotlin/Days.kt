@@ -11,6 +11,7 @@ import Day08
 import Day09
 import Day10
 import Day11
+import Day12
 
 class Day01Test : DayTest<Day01>(Day01())
 
@@ -33,3 +34,5 @@ class Day09Test : DayTest<Day09>(Day09())
 class Day10Test : DayTest<Day10>(Day10())
 
 class Day11Test : DayTest<Day11>(Day11())
+
+class Day12Test : DayTest<Day12>(Day12())
