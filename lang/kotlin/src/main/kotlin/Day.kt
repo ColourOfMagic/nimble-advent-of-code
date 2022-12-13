@@ -1,3 +1,5 @@
+import common.readFileAsString
+
 abstract class Day(
     val fileName: String,
     val firstTestAnswer: Any? = null,
