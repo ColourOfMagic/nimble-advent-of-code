@@ -22,7 +22,7 @@ abstract class DayTest<T : Day>(private val day: T) {
         )
 
     private fun firstTest() = dynamicTest("1. First task -> Test") {
-        assertEquals(day.fistPart(inputTestString), day.firstTestAnswer)
+        assertEquals(day.firstTestAnswer, day.fistPart(inputTestString))
     }
 
     private fun firstRealCalculate() = dynamicTest("2. First task -> Answer") {
@@ -30,7 +30,7 @@ abstract class DayTest<T : Day>(private val day: T) {
     }
 
     private fun secondTest() = dynamicTest("3. Second task -> Test") {
-        assertEquals(day.secondPart(inputTestString), day.secondTestAnswer)
+        assertEquals(day.secondTestAnswer, day.secondPart(inputTestString))
     }
 
     private fun secondRealCalculate() = dynamicTest("4. Second task -> Answer") {
